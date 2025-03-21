@@ -4,8 +4,9 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install ezyapi && \
-    ezy install
+RUN pip install --upgrade pip && \
+    pip install ezyapi && \
+    ezy install 
 
 ENTRYPOINT ["ezy", "run"]
 CMD ["start"]
