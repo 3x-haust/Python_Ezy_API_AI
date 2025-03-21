@@ -7,4 +7,5 @@ COPY . /app
 RUN pip install ezyapi && \
     ezy install
 
-CMD ["ezy", "run", "start"]
+ENTRYPOINT ["ezy", "run"]
+CMD ["start"]

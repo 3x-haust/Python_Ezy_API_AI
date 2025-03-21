@@ -9,4 +9,3 @@ services:
       - .env
     volumes:
       - .:/app
-    command: ezy run start
