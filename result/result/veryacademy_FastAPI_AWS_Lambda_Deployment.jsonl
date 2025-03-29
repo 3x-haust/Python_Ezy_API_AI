@@ -1,4 +1,0 @@
-{"repo_info": {"repo_name": "FastAPI_AWS_Lambda_Deployment", "repo_owner": "veryacademy", "repo_url": "https://github.com/veryacademy/FastAPI_AWS_Lambda_Deployment"}}
-{"type": "test_file", "path": "tests/__init__.py", "content": ""}
-{"type": "test_file", "path": "tests/test_core.py", "content": "from fastapi.testclient import TestClient\nfrom api.main import app\n\nclient = TestClient(app)\n\ndef test_root():\n    response = client.get(\"/\")\n    assert response.status_code == 200\n    assert response.json() == {\"message\": \"Hello World\"}"}
-{"type": "source_file", "path": "api/main.py", "content": "from mangum import Mangum\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello World\"}\n\nhandler = Mangum(app=app)"}
