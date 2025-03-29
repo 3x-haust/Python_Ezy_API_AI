@@ -1,0 +1,2 @@
+{"repo_info": {"repo_name": "fastapi", "repo_owner": "noahgift", "repo_url": "https://github.com/noahgift/fastapi"}}
+{"type": "source_file", "path": "main.py", "content": "from fastapi import FastAPI\nimport uvicorn\n\napp = FastAPI()\n\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello Duke\"}\n\n@app.get(\"/add/{num1}/{num2}\")\nasync def add(num1: int, num2: int):\n    \"\"\"Add two numbers together\"\"\"\n\n    total = num1 + num2\n    return {\"total\": total}\n\nif __name__ == '__main__':\n    uvicorn.run(app, port=8080, host='0.0.0.0')\n"}
